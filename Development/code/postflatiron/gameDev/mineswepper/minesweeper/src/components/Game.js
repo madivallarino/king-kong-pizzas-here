@@ -1,12 +1,13 @@
 import GameBoard from './GameBoard';
-
+import Tile from './Tile';
 function Game(){
 
 
 
     return (
-        <div className="gameboard">
+        <div>
           <GameBoard /> 
+         
         </div>
     )
 }
