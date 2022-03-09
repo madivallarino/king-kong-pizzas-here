@@ -238,21 +238,154 @@ function areThereDuplicates(){
 }
 
 
-function makeFrequencyCounter(obj){
+// function makeFrequencyCounter(obj){
    
-    let hash = {}
-    let i = 0;
-    while(i < obj.length){
-        if(!(hash[obj[i]])){
-            hash[obj[i]] = 1
+//     let hash = {}
+//     let i = 0;
+//     while(i < obj.length){
+//         if(!(hash[obj[i]])){
+//             hash[obj[i]] = 1
 
-        } else {
-            return true
-        }
-        i++
-    }
-    return false
-}
-// console.log(areThereDuplicates(1, 2, 3))
-console.log(areThereDuplicates(1, 2, 2))
+//         } else {
+//             return true
+//         }
+//         i++
+//     }
+//     return false
+// }
+// // console.log(areThereDuplicates(1, 2, 3))
+// console.log(areThereDuplicates(1, 2, 2))
 // console.log(areThereDuplicates('a', 'b', 'c', 'a'))
+
+
+// function averagePair(arr, num){
+//     let i = 0;
+//     let j = 1;
+  
+//     if(arr === []){
+//         return false 
+//     }
+
+//     while(i < arr.length - 1){
+//        console.log(i)
+//        console.log('-----')
+//        console.log(arr.length)
+//         if(j === arr.length){
+//             console.log('hello butthole')
+//             i++
+//             j = i + 1
+           
+//     }
+//         if((((arr[i] + arr[j]) / 2) === num)){
+//             console.log('hello')
+//             return true;
+
+//         }  else {
+//             console.log('hello james')
+//             j++ 
+           
+//         }
+         
+//         } 
+//         return false
+     
+// }
+
+// console.log(averagePair([1, 2, 3], 2.5)) //true
+// console.log(averagePair([1, 3, 3, 5, 6, 7, 10, 12 , 19], 8)) // true
+// console.log(averagePair([-1, 0, 3, 4, 5, 6], 4.1)) //false
+// console.log(averagePair([], 4)) //false
+
+
+// function isSubsequence(str1, str2){
+//     let arr1 = str1.split('')
+//     let arr2 = str2.split('')
+//     console.log(arr1)
+//     console.log(arr2)
+//     let i = 0;
+//     let j = 0;
+//     while(j <= arr2.length){
+//         if(i === arr1.length){
+//             return true
+//         }
+//         if(arr1[i] === arr2[j]){
+//             j++
+//             i++
+//         } else {
+//             j++
+//         }
+        
+//     }
+//     return false
+// }
+
+// console.log(isSubsequence('hello', 'hello world')) // true 
+// console.log(isSubsequence('sing', 'sting')) // true
+// console.log(isSubsequence('abc', 'abracadabra')) //true
+// console.log(isSubsequence('abc', 'acb')) // false (order mattters) 
+
+
+// function maxSubarraySum(arr, num){
+//     let i = 0;
+//     let j = num - 1;
+    
+//     if(num > arr.length){
+//         return null;
+//     }
+//     let totalSum = 0;
+
+//     for(let i = 0; i < num; i++){
+//         totalSum += arr[i]
+//     }
+    // while(j < arr.length){
+    //     let temp = 0;
+    //     let total = 0;
+    //     let temparr = arr.slice(i, num).reduce((a, b) => a + b, 0)
+    //     let othertemp = arr.slice(i + 1, num + 1).reduce((a, b) => a + b, 0)
+    //     let answer = Math.max(temparr, othertemp)
+    //     console.log(answer)
+    //     j++
+        
+    // }
+    // arr[i + j] - i 
+    
+// }
+
+// console.log(maxSubarraySum([100, 200, 300, 400], 2)) // 700
+// console.log(maxSubarraySum([1, 4, 3, 10, 23, 3, 1, 0, 20], 4)) // 39
+// console.log(maxSubarraySum([-3, 4, 0, -2, 6 , -1], 2)) // 5
+// console.log(maxSubarraySum([3, -2, 7, -4, 1, -1, 4, -2, 1], 2)) // 5
+// console.log(maxSubarraySum([2, 3], 3)) // null
+
+
+
+
+function matrixSwitch(arr){
+    let first = 0;
+    let n = arr[0].length
+    for(let layer = 0; layer < n / 2; layer ++){
+
+    }
+}
+
+let temp = top;
+right = top[i][last]
+
+
+let matrix = [
+    [1, 5, 9, 13], 
+    [2, 6, 10, 14], 
+    [3, 7, 11, 15],
+    [4, 8, 12, 16],
+]
+
+let matrix2 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9 ]
+]
+
+// console.log(matrixSwitch(matrix))
+console.log(matrixSwitch(matrix2))
+
+
