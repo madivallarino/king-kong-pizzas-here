@@ -360,32 +360,52 @@ function areThereDuplicates(){
 
 
 
-function matrixSwitch(arr){
-    let first = 0;
-    let n = arr[0].length
-    for(let layer = 0; layer < n / 2; layer ++){
+// function matrixSwitch(arr){
+//     let first = 0;
+//     let n = arr[0].length
+//     for(let layer = 0; layer < n / 2; layer ++){
 
-    }
-}
+//     }
+// }
 
-let temp = top;
-right = top[i][last]
+// let temp = top;
+// right = top[i][last]
 
 
-let matrix = [
-    [1, 5, 9, 13], 
-    [2, 6, 10, 14], 
-    [3, 7, 11, 15],
-    [4, 8, 12, 16],
-]
+// let matrix = [
+//     [1, 5, 9, 13], 
+//     [2, 6, 10, 14], 
+//     [3, 7, 11, 15],
+//     [4, 8, 12, 16],
+// ]
 
-let matrix2 = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9 ]
-]
+// let matrix2 = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9 ]
+// ]
 
 // console.log(matrixSwitch(matrix))
-console.log(matrixSwitch(matrix2))
+// console.log(matrixSwitch(matrix2))
 
+function subStringRotation(str1, str2){
+   let index =  str1.indexOf(str2[0])
+//    console.log(str1.slice(index))
+//    console.log(str1.slice(0, index))
+   let word = str1.slice(index) + str1.slice(0, index)
+   
+   
+   if(word === str2){
+       return true
+   } else {
+       return false 
+   }
+    
+
+}
+
+let word = 'waterbottle'
+let testcase = 'erbottlewat'
+// console.log(subStringRotation())
+console.log(subStringRotation(testcase, word))
 
