@@ -388,24 +388,249 @@ function areThereDuplicates(){
 // console.log(matrixSwitch(matrix))
 // console.log(matrixSwitch(matrix2))
 
-function subStringRotation(str1, str2){
-   let index =  str1.indexOf(str2[0])
-//    console.log(str1.slice(index))
-//    console.log(str1.slice(0, index))
-   let word = str1.slice(index) + str1.slice(0, index)
+// function subStringRotation(str1, str2){
+//    let index =  str1.indexOf(str2[0])
+// //    console.log(str1.slice(index))
+// //    console.log(str1.slice(0, index))
+//    let word = str1.slice(index) + str1.slice(0, index)
+
+//    if(word === str2){
+//        return true
+//    } else {
+//        return false 
+//    }
+    
+
+// }
+
+// let word = 'waterbottle'
+// let testcase = 'erbottlewat'
+// // console.log(subStringRotation())
+// console.log(subStringRotation(testcase, word))
+
+// function findTheZero(matr){
+//     let indexs = [];
+//     for(let i = 0; i < matr.length; i++){
+//             for(let j = 0; j < matr[i].length; j++){
+//                 if(matr[i][j] === 0){
+//                     indexs.push([matr.indexOf(matr[i]),matr[i].indexOf(matr[i][j])])
+//                 }
+//             }
+//     }
+//     for(let num = 0; num < indexs.length; num++){
+//         changeColumn(indexs[num][0], matr)
+//         changeRow(indexs[num][1], matr)
+//     }
+
+//     // return matr
+// }
+
+// function changeColumn(num, matr){
+//     for(let i = 0; i < matr.length; i++){
+//         if(num === matr[i]){
+//             console.log(num)
+//             // for(let j = 0; j < matr[i].length; j++){
+//             //     matr[i][j] = 0
+//             // }
+//         }
+//     }
+//     return matr
+// }
+
+// function changeRow(num, matr){
+//     for (let i = 0; i < matr.length; i++){
+//         for(let j = 0; j< matr[i].length; j++){
+//             // if(matr.indexOf(matr[i][j] === num))
+//             // {
+//                 console.log(matr.indexOf(matr[i][j]))
+//             //     console.log(num)
+//             //     // matr[i][j] = 0;
+//             // }
+//         }
+//     }
+//     return matr
+// }
+
+
+// let matrix = [
+//     [1, 1, 1, 1, 1, 0, 1],
+//     [1, 1, 1, 1, 1, 1, 1], 
+//     [1, 1, 1, 1, 1, 1, 1],
+//     [1, 1, 1, 1, 1, 1, 1],
+//     [1, 1, 1, 1, 1, 1, 1],
+//     [1, 1, 1, 1, 1, 1, 1],
+// ]
+// console.log(findTheZero(matrix))
+// console.log(findTheZero())
+
+// function numberOfWays(arr, k){
+//     let i = 0;
+//     let j = 0;
+//     let count = 0;
+
+
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i] + arr[j] === k ){
+//             count += 1
+//             j++
+            
+//         }
+    
+        
+//         j++ 
+//     }
+    
+
+
+// }
+
+// let arr1 = [1, 5, 3, 3, 3]
+// let num = 6; 
+// console.log(numberOfWays(arr1, num))
+
+
+// function power(num1, num2){
+// if(num2 === 0) return 1
+//     return num1 * power(num1, num2 - 1)
+// }
+
+
+// console.log(power(2, 0)) //1
+// console.log(power(2, 2)) //4
+// console.log(power(2, 4)) //16
+
+
+// function factorial(num){
+//     if(num === 0) return 1
+//     return num * factorial(num - 1)
+// }
+
+// console.log(factorial(1)) //1
+// console.log(factorial(2)) //2
+// console.log(factorial(4)) //24
+// console.log(factorial(7)) //5040
+
+// function productOfArray(arr){
+//     if(arr.length === 0) return 1;
    
+  
+//      return arr[0] * productOfArray(arr.slice(1))
+     
+// }
+
+// console.log(productOfArray([1,2,3])) // 6
+// console.log(productOfArray([1, 2, 3, 10])) // 60
+
+// function recursiveRange(num){
+//     if(num === 0) return 0
+//     return num + recursiveRange(num - 1)
+// }
+
+// console.log(recursiveRange(6)) // 21
+// console.log(recursiveRange(10)) // 55
+
+
+// function fib(num){
+//     let sequence = [1, 1];
+//     function helper(){
+//         if(sequence.length === num ){
+//             return sequence[sequence.length - 1]
+//         }
+        
+//         sequence.push(sequence[sequence.length - 1] + sequence[sequence.length - 2])
+        
+//         return helper(num)
+//     }
+    
+//     return helper(num)
+// }
+
+// console.log(fib(4)) // 3
+// console.log(fib(10)) //55
+// console.log(fib(28)) // 317811
+// console.log(fib(35)) // 9227465
+
+// function isPalindrome(word){
+//     let i = 0;
+//     let j = word.length - 1
+
+    
+
+
+//     function helper(){
+      
+//         if(i >= j){
+//             return true
+//         }
+//         if(word[i] === word[j]){
+//             helper(i + 1, j - 1)
+//         }
+//         return false 
+//     }
    
-   if(word === str2){
-       return true
-   } else {
-       return false 
-   }
+//     helper()
+// }
+
+// //dod // true 
+// console.log(isPalindrome('awesome')) //false
+// console.log(isPalindrome('foobar')) // false
+// console.log(isPalindrome('tacocat')) //true
+
+
+// function flatten(arr){
+//     let newArr = [];
+
+//     return inner(arr, newArr)
+// }
+
+// function inner(arr, newArr){
+//     if(arr.length === 0){
+//         return newArr
+//     }
+//     if(typeof(arr[0]) === "number"){
+//         newArr.push(arr[0])
+//     }
+//     if(typeof(arr[0]) === "object"){
+//         console.log(arr[0])
+//       return anotherOne(arr[0], newArr)
+//     }
+
+//     return inner(arr.slice(1), newArr)
+// }
+
+
+// function anotherOne(arr, answer){
+//     arr.forEach((what)=> {
+//        if(what != '[' || ']'){
+//            answer.push(what)
+//        }
+//     })
+//     return answer
+// }
+
+
+
+// // // console.log(flatten([1, 2, 3, [4, 5]])) // [1, 2, 3, 4, 5]
+// console.log(flatten([1, [2, [3, 4],[5]]])) // [1,, 2, 3, 4, 5]
+// console.log(flatten([1], [2] [3])) // [1, 2, 3]
+
+function capitalizeFirst(arr){
+    let newArr = []
+    
+    function helper(arr){
+        if(arr.length === 0){
+            return newArr
+        }
+        newArr.push(arr[0].charAt(0).toUpperCase() + arr[0].slice(1).toLowerCase())
+       return helper(arr.slice(1))
+    }
+    
+return helper(arr)
+
+
     
 
 }
 
-let word = 'waterbottle'
-let testcase = 'erbottlewat'
-// console.log(subStringRotation())
-console.log(subStringRotation(testcase, word))
 
+console.log(capitalizeFirst(['car', 'taco', 'banana'])) // ['Car', 'Taco', 'Banana']
