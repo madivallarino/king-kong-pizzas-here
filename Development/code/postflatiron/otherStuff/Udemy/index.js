@@ -614,23 +614,151 @@ function areThereDuplicates(){
 // console.log(flatten([1, [2, [3, 4],[5]]])) // [1,, 2, 3, 4, 5]
 // console.log(flatten([1], [2] [3])) // [1, 2, 3]
 
-function capitalizeFirst(arr){
-    let newArr = []
+// function capitalizeFirst(arr){
+//     let newArr = []
     
-    function helper(arr){
-        if(arr.length === 0){
-            return newArr
-        }
-        newArr.push(arr[0].charAt(0).toUpperCase() + arr[0].slice(1).toLowerCase())
-       return helper(arr.slice(1))
+//     function helper(arr){
+//         if(arr.length === 0){
+//             return newArr
+//         }
+//         newArr.push(arr[0].charAt(0).toUpperCase() + arr[0].slice(1).toLowerCase())
+//        return helper(arr.slice(1))
+//     }
+    
+// return helper(arr)
+
+
+    
+
+// }
+
+
+// console.log(capitalizeFirst(['car', 'taco', 'banana'])) // ['Car', 'Taco', 'Banana']
+
+
+function stringifyNumbers (obj) {
+  let newObj = obj;
+  
+console.log(inner(newObj))
+console.log(obj)
+
+  }
+  
+function makeNewObj(obj){
+    let newObj = {};
+    for(let key in obj){
+        
     }
-    
-return helper(arr)
-
-
-    
-
 }
 
 
-console.log(capitalizeFirst(['car', 'taco', 'banana'])) // ['Car', 'Taco', 'Banana']
+function inner(obj){
+    for(let key in obj){
+      if(objOrNot(obj[key], "number")){
+        obj[key] = toString(obj[key])
+    } 
+      if((objOrNot(obj[key], "object"))){
+          inner(obj[key])
+      }
+     
+    }return obj
+}
+
+function objOrNot(something, thing){
+    return (typeof(something) === thing)
+}
+
+  function toString(num){
+      return num.toString()
+     
+  }
+  
+
+//   function sumArr(arr){
+//     console.log(arr)
+//     let total = 0;
+//     function inner(arr, total){
+//         if(arr.length === 0 ){
+//             return total
+//         }
+//         total += arr[0]
+//        return inner(arr.slice(1), total)
+//     }
+   
+//     return inner(arr, total)
+//   }
+//   var obj1 = {
+//     outer: 2,
+//     obj: {
+//       inner: 2,
+//       otherObj: {
+//         superInner: 2,
+//         notANumber: true,
+//         alsoNotANumber: "yup"
+//       }
+//     }
+//   }
+  
+//   var obj2 = {
+//     a: 2,
+//     b: {b: 2, bb: {b: 3, bb: {b: 2}}},
+//     c: {c: {c: 2}, cc: 'ball', ccc: 5},
+//     d: 1,
+//     e: {e: {e: 2}, ee: 'car'}
+//   };
+  
+//   console.log(nestedEvenSum(obj1)); // 6
+//   console.log(nestedEvenSum(obj2)); // 10
+
+
+
+//   if (objOrNot(obj[key])){
+//     isEven(obj[key], arr)
+// } if(!(objOrNot(obj[key]))) {
+//    inner(obj[key], arr)
+// }
+
+
+// function capitalizedWords(arr){
+//     let sentence = []
+//     for(let word of arr){
+//         sentence.push(capitalizeWord(word))
+//     }
+//     return sentence
+// }
+
+// function capitalizeWord(word){
+//     let newWord = "";
+//     function inner(newWord, word){
+//         if(word.length === 0){
+//             return newWord
+//         } 
+//         newWord += word[0].toUpperCase()
+//        return inner(newWord, word.slice(1))
+//     }
+//    return inner(newWord, word)
+// }
+
+//  let words = ['i', 'am', 'learning', 'recursion'];
+// console.log(capitalizedWords(words)); // ['I', 'AM', 'LEARNING', 'RECURSION']
+
+
+
+// function stringifyNumbers(obj){
+
+// }
+
+let obj = {
+    num: 1,
+    test: [],
+    data: {
+        val: 4,
+        info: {
+            isRight: true,
+            random: 66
+        }
+    }
+}
+
+
+console.log(stringifyNumbers(obj))
