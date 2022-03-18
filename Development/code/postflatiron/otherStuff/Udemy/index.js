@@ -636,42 +636,46 @@ function areThereDuplicates(){
 // console.log(capitalizeFirst(['car', 'taco', 'banana'])) // ['Car', 'Taco', 'Banana']
 
 
-function stringifyNumbers (obj) {
-  let newObj = obj;
+// function stringifyNumbers (obj) {
   
-console.log(inner(newObj))
-console.log(obj)
+//   let newObj = makeNewObj(obj)
+ 
+//   return inner(newObj)
 
-  }
+//   }
   
-function makeNewObj(obj){
-    let newObj = {};
-    for(let key in obj){
-        
-    }
-}
+// function makeNewObj(obj){
+//     let newObj = {};
+//     for(let key in obj){
+//         if(!(newObj[key])){
+//           newObj[key] = obj[key]
+//         }
+//     }
+//     return newObj
+// }
 
 
-function inner(obj){
-    for(let key in obj){
-      if(objOrNot(obj[key], "number")){
-        obj[key] = toString(obj[key])
-    } 
-      if((objOrNot(obj[key], "object"))){
-          inner(obj[key])
-      }
+// function inner(newObj){
+//     for(let key in newObj){
+//       if(objOrNot(newObj[key], "number")){
+//         newObj[key] = toString(newObj[key])
+//     } 
+//       if((objOrNot(newObj[key], "object"))){
+//           inner(newObj[key])
+//       }
      
-    }return obj
-}
+//     }
+//     return newObj
+// }
 
-function objOrNot(something, thing){
-    return (typeof(something) === thing)
-}
+// function objOrNot(something, thing){
+//     return (typeof(something) === thing)
+// }
 
-  function toString(num){
-      return num.toString()
+//   function toString(num){
+//       return num.toString()
      
-  }
+//   }
   
 
 //   function sumArr(arr){
@@ -748,17 +752,54 @@ function objOrNot(something, thing){
 
 // }
 
-let obj = {
-    num: 1,
-    test: [],
-    data: {
-        val: 4,
-        info: {
-            isRight: true,
-            random: 66
-        }
-    }
-}
+// let obj = {
+//     num: 1,
+//     test: [],
+//     data: {
+//         val: 4,
+//         info: {
+//             isRight: true,
+//             random: 66
+//         }
+//     }
+// }
 
 
-console.log(stringifyNumbers(obj))
+// console.log(stringifyNumbers(obj))
+
+
+// function collectStrings(obj){
+//      let answer = [];
+//      function inner(obj, answer){
+//       for(let key in obj){
+//         if(typeof(obj[key]) === 'string'){
+//            answer.push(obj[key])
+//         }
+//         if(typeof(obj[key]) === "object"){
+//            inner(obj[key], answer)
+//         }
+//        }
+//      }
+//      inner(obj, answer)
+//     return answer
+
+// }
+
+
+// const obj = {
+//   stuff: "foo",
+//   data: {
+//       val: {
+//           thing: {
+//               info: "bar",
+//               moreInfo: {
+//                   evenMoreInfo: {
+//                       weMadeIt: "baz"
+//                   }
+//               }
+//           }
+//       }
+//   }
+// }
+
+// console.log(collectStrings(obj)) // ["foo", "bar", "baz"])
