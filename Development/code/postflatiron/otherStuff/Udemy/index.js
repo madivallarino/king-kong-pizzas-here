@@ -906,19 +906,38 @@ function mergeSort(arr1, arr2){
     return answerArr
 }
 
-
-function sorting(arr){
+function recursion(arr){
     if(arr.length <= 1){
-        
+        return arr
     }
-  if(arr.length % 2 === 0){
-    sorting(arr.slice(0, arr.length /2))
-    sorting(arr.slice(arr.length /2))
-  } else {
-    sorting(arr.slice(0, Math.floor(arr.length/2)))
-    sorting(arr.slice(Math.floor(arr.length/2)))
+      if(arr.length % 2 === 0){
+//    recursion(arr.slice(0, arr.length /2), answer)
+    return mergeSort(recursion(arr.slice(arr.length /2)), recursion(arr.slice(0, Math.floor(arr.length/2))))
+  }
+   else {
+       return mergeSort(recursion(arr.slice(0, Math.floor(arr.length/2))), recursion(arr.slice(Math.floor(arr.length/2))))
+    // recursion(arr.slice(0, Math.floor(arr.length/2)))
+    // recursion(arr.slice(Math.floor(arr.length/2)))
   }
 }
 
+function outerFunction(arr){
+  
+    return recursion(arr)
+}
 
-console.log(sorting([1, 3, 5, 7], [2, 4, 6, 8]))
+// function sorting(arr){
+//     if(arr.length <= 1){
+        
+//     }
+//   if(arr.length % 2 === 0){
+//     sorting(arr.slice(0, arr.length /2))
+//     sorting(arr.slice(arr.length /2))
+//   } else {
+//     sorting(arr.slice(0, Math.floor(arr.length/2)))
+//     sorting(arr.slice(Math.floor(arr.length/2)))
+//   }
+// }
+
+
+console.log(outerFunction([1,10, 50, 2, 8, 4, 35]))
