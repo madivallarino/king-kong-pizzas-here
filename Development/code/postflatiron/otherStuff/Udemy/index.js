@@ -880,51 +880,51 @@ const testArray = [1,4,29,10,6]
 // console.log(insertionSort([100, 82, 55, 96, 2, 12, 8]))
 
 
-function mergeSort(arr1, arr2){
-    let i = 0;
-    let j = 0;
-    let answerArr = [];
+// function mergeSort(arr1, arr2){
+//     let i = 0;
+//     let j = 0;
+//     let answerArr = [];
     
-    while(i < arr1.length || j < arr2.length ){
+//     while(i < arr1.length || j < arr2.length ){
         
-        if(arr1[i] < arr2[j]){
-            answerArr.push(arr1[i])
-            i++ 
-        }
-        if(arr2[j] < arr1[i]){
-            answerArr.push(arr2[j])
-            j++
-        }
-        if( i === arr1.length){
-            return answerArr.concat(arr2.slice(j))
-        }
+//         if(arr1[i] < arr2[j]){
+//             answerArr.push(arr1[i])
+//             i++ 
+//         }
+//         if(arr2[j] < arr1[i]){
+//             answerArr.push(arr2[j])
+//             j++
+//         }
+//         if( i === arr1.length){
+//             return answerArr.concat(arr2.slice(j))
+//         }
         
-        if( j === arr2.length){
-            return answerArr.concat(arr1.slice(i))
-        }
-    }
-    return answerArr
-}
+//         if( j === arr2.length){
+//             return answerArr.concat(arr1.slice(i))
+//         }
+//     }
+//     return answerArr
+// }
 
-function recursion(arr){
-    if(arr.length <= 1){
-        return arr
-    }
-      if(arr.length % 2 === 0){
-//    recursion(arr.slice(0, arr.length /2), answer)
-    return mergeSort(recursion(arr.slice(arr.length /2)), recursion(arr.slice(0, Math.floor(arr.length/2))))
-  }
-   else {
-       return mergeSort(recursion(arr.slice(0, Math.floor(arr.length/2))), recursion(arr.slice(Math.floor(arr.length/2))))
-    // recursion(arr.slice(0, Math.floor(arr.length/2)))
-    // recursion(arr.slice(Math.floor(arr.length/2)))
-  }
-}
+// function recursion(arr){
+//     if(arr.length <= 1){
+//         return arr
+//     }
+//       if(arr.length % 2 === 0){
+// //    recursion(arr.slice(0, arr.length /2), answer)
+//     return mergeSort(recursion(arr.slice(arr.length /2)), recursion(arr.slice(0, Math.floor(arr.length/2))))
+//   }
+//    else {
+//        return mergeSort(recursion(arr.slice(0, Math.floor(arr.length/2))), recursion(arr.slice(Math.floor(arr.length/2))))
+//     // recursion(arr.slice(0, Math.floor(arr.length/2)))
+//     // recursion(arr.slice(Math.floor(arr.length/2)))
+//   }
+// }
 
-function outerFunction(arr){
+// function outerFunction(arr){
   
-    return recursion(arr)
-}
+//     return recursion(arr)
+// }
 
 // function sorting(arr){
 //     if(arr.length <= 1){
@@ -940,4 +940,38 @@ function outerFunction(arr){
 // }
 
 
-console.log(outerFunction([1,10, 50, 2, 8, 4, 35]))
+// console.log(outerFunction([1,10, 50, 2, 8, 4, 35]))
+
+// let temp = arr[h]
+//                 arr[h] = arr[j]
+//                 arr[j] = temp 
+
+// function pivot(arr, index1, index2){
+//    let currentIndex = index1; 
+//    for(let i = 0; i < arr.length; i++){
+//        if (arr[index1] > arr[i]){
+//             currentIndex++;
+           
+//             arr = swap(arr, i, currentIndex)
+//        }
+//    }
+//    arr = swap(arr, index1, currentIndex)
+//    return arr
+// }
+
+
+
+// function swap(arr, ele1, ele2){
+//     let temp = arr[ele1]
+//     arr[ele1] = arr[ele2]
+//     arr[ele2] = temp
+//     return arr
+// }
+
+// let testArr = [25, 10, 50 ,2]
+// let startIndex = 0;
+// let endIndex = testArr.length - 1
+
+
+// // console.log(swap(testArr, 2, 4))
+// console.log(pivot(testArr, startIndex, endIndex))
