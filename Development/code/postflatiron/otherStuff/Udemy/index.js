@@ -803,3 +803,122 @@ function areThereDuplicates(){
 // }
 
 // console.log(collectStrings(obj)) // ["foo", "bar", "baz"])
+
+
+const testArray = [1,4,29,10,6]
+
+// function ForLoop (arr){
+  
+//   for(let i = 0; i < arr.length ; i ++){
+//    let firstValue = arr[i];
+//    let firstIndex = i;
+//     for(let j = i + 1; j< arr.length; j++){
+//       if (firstValue > arr[j]){
+//           firstValue = arr[j]
+//             firstIndex = j;
+//       }
+//       }
+//       if(arr[i] != firstValue){
+//         arr = swap(arr,firstValue, firstIndex, i ) 
+//       }
+//     }
+    
+//   return arr
+// }
+
+// const swap = (arr, x, index2, i) => {
+//     let temp = arr[i];
+//     arr[i] = arr[index2];
+//     arr[index2] = temp;
+  
+//     return arr
+// }
+
+// console.log(ForLoop(testArray))
+
+
+// function insertionSort(arr){
+//     let i = 0;
+//     let j = i + 1
+//     while(j < arr.length){
+        
+//         if(arr[j] < arr[i]){
+//             let temp = arr[i]
+//             arr[i] = arr[j];
+//            arr[j] = temp
+           
+//         }
+
+
+//         j++
+//         i++
+//     }
+//     return arr
+// }
+
+// function insertionSort(arr){
+    
+//     for(let i = 0; i < arr.length; i++){
+//         let j = i + 1;
+//         let h = i;
+//         while(j > 0){
+//             if (arr[j] < arr[h]){
+//                 let temp = arr[h]
+//                 arr[h] = arr[j]
+//                 arr[j] = temp 
+//             }
+//             h--
+//             j--
+//         }
+//     }
+//     return arr
+// }
+
+
+// // console.log(insertionSort([2, 6, 5, 3, 8, 10, 9]))
+
+// console.log(insertionSort([100, 82, 55, 96, 2, 12, 8]))
+
+
+function mergeSort(arr1, arr2){
+    let i = 0;
+    let j = 0;
+    let answerArr = [];
+    
+    while(i < arr1.length || j < arr2.length ){
+        
+        if(arr1[i] < arr2[j]){
+            answerArr.push(arr1[i])
+            i++ 
+        }
+        if(arr2[j] < arr1[i]){
+            answerArr.push(arr2[j])
+            j++
+        }
+        if( i === arr1.length){
+            return answerArr.concat(arr2.slice(j))
+        }
+        
+        if( j === arr2.length){
+            return answerArr.concat(arr1.slice(i))
+        }
+    }
+    return answerArr
+}
+
+
+function sorting(arr){
+    if(arr.length <= 1){
+        
+    }
+  if(arr.length % 2 === 0){
+    sorting(arr.slice(0, arr.length /2))
+    sorting(arr.slice(arr.length /2))
+  } else {
+    sorting(arr.slice(0, Math.floor(arr.length/2)))
+    sorting(arr.slice(Math.floor(arr.length/2)))
+  }
+}
+
+
+console.log(sorting([1, 3, 5, 7], [2, 4, 6, 8]))
