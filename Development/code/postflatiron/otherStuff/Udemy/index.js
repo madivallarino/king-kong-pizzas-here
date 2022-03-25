@@ -946,32 +946,97 @@ const testArray = [1,4,29,10,6]
 //                 arr[h] = arr[j]
 //                 arr[j] = temp 
 
-// function pivot(arr, index1, index2){
+// function pivot(arr, index1 = 0, index2 = arr.length -1){
+//    let pivotVar = arr[index1];
 //    let currentIndex = index1; 
 //    for(let i = 0; i < arr.length; i++){
-//        if (arr[index1] > arr[i]){
+//        if (pivotVar > arr[i]){
 //             currentIndex++;
-           
 //             arr = swap(arr, i, currentIndex)
 //        }
 //    }
 //    arr = swap(arr, index1, currentIndex)
-//    return arr
+//    return currentIndex
 // }
 
 
 
-// function swap(arr, ele1, ele2){
+// function swap(arr, ele1 , ele2 ){
 //     let temp = arr[ele1]
 //     arr[ele1] = arr[ele2]
 //     arr[ele2] = temp
+
 //     return arr
 // }
 
-// let testArr = [25, 10, 50 ,2]
+// let testArr = [25, 10,8, 9, 100]
 // let startIndex = 0;
 // let endIndex = testArr.length - 1
 
 
+
+
+// function quickSort(arr, left = 0, right = arr.length - 1){
+//     if(left < right){
+//         let updatedIndex = pivot(arr)
+//         quickSort(arr, left, updatedIndex -1)
+//         quickSort(arr, updatedIndex + 1, right)
+//         return arr
+//     }
+    
+
+    
+    
+// }
 // // console.log(swap(testArr, 2, 4))
-// console.log(pivot(testArr, startIndex, endIndex))
+// console.log(quickSort(testArr))
+
+
+// function getDigit(num, place){
+//     let count = place;
+    
+//     let stringNum = num.toString()
+//     let j = stringNum.length -1
+//     for(let i = count; i >= 0; i--){
+//         if(i === 0){
+//             return parseInt(stringNum[j])
+//         }
+//             // return parseInt(stringNum[i])
+//         j++
+//     }
+// }
+function getDigit(num, i){
+    return Math.floor(Math.abs(num) / Math.pow(10, i )) % 10;
+}
+
+
+
+function digitCount(num){
+    return String(num).length 
+}
+
+function mostDigits(nums){
+    let largestNum = digitCount(nums[0]); 
+    for(let i = 1; i < nums.length; i++){
+        if(largestNum < digitCount(nums[i])){
+            largestNum = digitCount(nums[i])
+        }
+    }
+    return largestNum
+}
+
+function outerFunction(nums){
+    let largestDigit = mostDigits(nums)
+    let k = 0;
+    while(k <= largestDigit){
+        for(let i =0; i < nums.length; i++){
+            (getDigit(nums[i], k))
+        }
+        k++
+    }
+  
+}
+
+
+
+console.log(outerFunction([1234, 56, 7, 123456, 233, 4587, 11, 11144752])) //5
