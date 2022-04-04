@@ -805,7 +805,7 @@ function areThereDuplicates(){
 // console.log(collectStrings(obj)) // ["foo", "bar", "baz"])
 
 
-const testArray = [1,4,29,10,6]
+// const testArray = [1,4,29,10,6]
 
 // function ForLoop (arr){
   
@@ -1025,18 +1025,51 @@ function mostDigits(nums){
     return largestNum
 }
 
-function outerFunction(nums){
+// function outerFunction(nums){
+//     let largestDigit = mostDigits(nums)
+//     let k = 0;
+//     while(k <= largestDigit){
+//         for(let i =0; i < nums.length; i++){
+//             (getDigit(nums[i], k))
+//         }
+//         k++
+//     }
+// }
+
+function radixSort(nums){
     let largestDigit = mostDigits(nums)
-    let k = 0;
-    while(k <= largestDigit){
-        for(let i =0; i < nums.length; i++){
-            (getDigit(nums[i], k))
+    let newNums = nums;
+   
+    let buckets = []
+    for(let k = 0;  k < largestDigit; k++){
+       
+        for(let i = 0; i < nums.length; i ++){
+           buckets = helper(buckets, getDigit(newNums[i], k), newNums[i])
+          
         }
-        k++
+      newNums = arrayMerger(buckets)
+        buckets = [] 
     }
-  
+return newNums
+}
+function helper(arr, key, element){
+    if(!(arr[key])){
+        arr[key] = [element]
+    } else {
+        arr[key].push(element)
+    }
+    return arr
+}
+
+function arrayMerger(arr){
+    newArr = arr.filter(value=> typeof(value) === 'object')
+    return [].concat.apply([], newArr)
 }
 
 
+// console.log(arrayMerger([[1], [3]]))
 
-console.log(outerFunction([1234, 56, 7, 123456, 233, 4587, 11, 11144752])) //5
+
+ console.log(radixSort([1234, 56, 7, 74])) //5
+
+
