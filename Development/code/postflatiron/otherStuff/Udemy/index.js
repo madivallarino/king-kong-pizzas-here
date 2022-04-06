@@ -1005,71 +1005,109 @@ function areThereDuplicates(){
 //         j++
 //     }
 // }
-function getDigit(num, i){
-    return Math.floor(Math.abs(num) / Math.pow(10, i )) % 10;
-}
-
-
-
-function digitCount(num){
-    return String(num).length 
-}
-
-function mostDigits(nums){
-    let largestNum = digitCount(nums[0]); 
-    for(let i = 1; i < nums.length; i++){
-        if(largestNum < digitCount(nums[i])){
-            largestNum = digitCount(nums[i])
-        }
-    }
-    return largestNum
-}
-
-// function outerFunction(nums){
-//     let largestDigit = mostDigits(nums)
-//     let k = 0;
-//     while(k <= largestDigit){
-//         for(let i =0; i < nums.length; i++){
-//             (getDigit(nums[i], k))
-//         }
-//         k++
-//     }
+// function getDigit(num, i){
+//     return Math.floor(Math.abs(num) / Math.pow(10, i )) % 10;
 // }
 
-function radixSort(nums){
-    let largestDigit = mostDigits(nums)
-    let newNums = nums;
+
+
+// function digitCount(num){
+//     return String(num).length 
+// }
+
+// function mostDigits(nums){
+//     let largestNum = digitCount(nums[0]); 
+//     for(let i = 1; i < nums.length; i++){
+//         if(largestNum < digitCount(nums[i])){
+//             largestNum = digitCount(nums[i])
+//         }
+//     }
+//     return largestNum
+// }
+
+// // function outerFunction(nums){
+// //     let largestDigit = mostDigits(nums)
+// //     let k = 0;
+// //     while(k <= largestDigit){
+// //         for(let i =0; i < nums.length; i++){
+// //             (getDigit(nums[i], k))
+// //         }
+// //         k++
+// //     }
+// // }
+
+// function radixSort(nums){
+//     let largestDigit = mostDigits(nums)
+//     let newNums = nums;
    
-    let buckets = []
-    for(let k = 0;  k < largestDigit; k++){
+//     let buckets = []
+//     for(let k = 0;  k < largestDigit; k++){
        
-        for(let i = 0; i < nums.length; i ++){
-           buckets = helper(buckets, getDigit(newNums[i], k), newNums[i])
+//         for(let i = 0; i < nums.length; i ++){
+//            buckets = helper(buckets, getDigit(newNums[i], k), newNums[i])
           
+//         }
+//       newNums = arrayMerger(buckets)
+//         buckets = [] 
+//     }
+// return newNums
+// }
+// function helper(arr, key, element){
+//     if(!(arr[key])){
+//         arr[key] = [element]
+//     } else {
+//         arr[key].push(element)
+//     }
+//     return arr
+// }
+
+// function arrayMerger(arr){
+//     newArr = arr.filter(value=> typeof(value) === 'object')
+    
+//     return [].concat.apply([], newArr)
+// }
+
+
+// // console.log(arrayMerger([[1], [3]]))
+
+
+//  console.log(radixSort([1234, 56, 7, 74])) //5
+
+
+class Node{
+    constructor(val){
+        this.val = val;
+        this.next = null;
+    }
+}
+
+class SinglyLinkedList{
+    constructor(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
+    push(val){
+        let newNode = new Node(val)
+
+        if(!(this.head)){
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            this.tail.next = newNode
+            this.head = this.tail
+            this.tail = temp
         }
-      newNums = arrayMerger(buckets)
-        buckets = [] 
+        this.length += 1
     }
-return newNums
-}
-function helper(arr, key, element){
-    if(!(arr[key])){
-        arr[key] = [element]
-    } else {
-        arr[key].push(element)
-    }
-    return arr
-}
-
-function arrayMerger(arr){
-    newArr = arr.filter(value=> typeof(value) === 'object')
-    return [].concat.apply([], newArr)
 }
 
 
-// console.log(arrayMerger([[1], [3]]))
-
-
- console.log(radixSort([1234, 56, 7, 74])) //5
-
-
+let list = new SinglyLinkedList()
+list.push(1)
+list.push(2)
+list.push(3)
+list.push(4)
+list.push(5)
+console.log(list)
