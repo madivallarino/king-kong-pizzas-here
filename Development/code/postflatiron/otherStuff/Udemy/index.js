@@ -1093,21 +1093,144 @@ class SinglyLinkedList{
 
         if(!(this.head)){
             this.head = newNode
-            this.tail = newNode
+
+            this.tail = this.head
         } else {
             this.tail.next = newNode
-            this.head = this.tail
-            this.tail = temp
+            this.tail = newNode
+           
+            
         }
         this.length += 1
+        return this;
+    }
+
+    pop(){
+        if(!this.head) return undefined;
+        let currentNode = this.head
+        let previousNode = null;
+        while(currentNode.next){
+            previousNode = currentNode
+            currentNode = currentNode.next
+           
+        }
+        previousNode.next = null
+        this.tail = previousNode;
+        this.length--
+        return this;
+    }
+
+    shift(){
+        if(!this.head) return undefined;
+        let temp = this.head;
+        this.head = this.head.next;
+        this.length--
+        return temp
+    }
+
+    unshift(val){
+        let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode
+            this.tail = this.head
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    get(index){
+        if(index < 0 || index >= this.length) return null;
+    //     let str = '.next'
+    //     let longString = str.repeat(index)
+    //    return this.head + longString
+    let counter = 0;
+    let currentNode = this.head
+        let previousNode = null;
+
+    while(counter <= index){
+       if(counter === index){
+           return currentNode
+       }
+        previousNode = currentNode
+        currentNode = currentNode.next
+        counter++;
+    }
+       
+    }
+
+    set(val, idx){
+        let node = this.get(idx)
+        if(!node) { return false; }
+        else {
+           node.val = val;
+            return true;
+        }
+    }
+
+    insert(val, idx){
+        let newNode = new Node(val)
+        if(idx < 0 || idx > this.length) return false;
+        if(idx === this.length){
+            this.push(val)
+            return true;
+            
+        }
+        if(idx === 0){
+            this.unshift(val)
+            return true
+        } else {
+            let node = this.get(idx - 1)
+            newNode.next = node.next;
+            node.next = newNode;
+            this.length++
+            return true;
+        }
+    }
+
+    remove(idx){
+        if(idx < 0 || idx > this.length) return undefined;
+        if(idx === this.length - 1) return this.pop();
+        if(idx === 0) return this.shift();
+        let node = this.get(idx - 1);
+        let temp = node.next
+        node.next = temp.next
+        this.length--
+        return temp
+    }
+
+    reverse(){
+        let temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+
+        let nextVar;
+        let prevVar; 
+        let node = this.head;
+
+        while(node.next){
+            nextVar = node.next;
+            prevVar = nextVar;
+            node.next = prevVar
+            prevVar = node;
+        }
     }
 }
 
 
 let list = new SinglyLinkedList()
-list.push(1)
 list.push(2)
-list.push(3)
 list.push(4)
-list.push(5)
+list.push(6)
+list.push(8)
+list.push(10)
+console.log(list.reverse())
+
+
 console.log(list)
+
+
+
+
