@@ -1202,20 +1202,27 @@ class SinglyLinkedList{
     }
 
     reverse(){
-        let temp = this.head;
+        let node = this.head;
         this.head = this.tail;
-        this.tail = temp;
+        this.tail = node;
 
         let nextVar;
-        let prevVar; 
-        let node = this.head;
+        let prevVar = null; 
+     
+     
 
-        while(node.next){
+        for(let i = 0; i < this.length; i++){
+           
+    
             nextVar = node.next;
-            prevVar = nextVar;
-            node.next = prevVar
+            node.next = prevVar;
             prevVar = node;
+            node = nextVar;
+            
+           
         }
+        return this
+
     }
 }
 
