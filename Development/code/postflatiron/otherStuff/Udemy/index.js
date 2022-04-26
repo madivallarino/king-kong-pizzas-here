@@ -1074,170 +1074,256 @@ function areThereDuplicates(){
 //  console.log(radixSort([1234, 56, 7, 74])) //5
 
 
-class Node{
-    constructor(val){
-        this.val = val;
-        this.next = null;
-    }
-}
+// class Node{
+//     constructor(val){
+//         this.val = val;
+//         this.next = null;
+//     }
+// }
 
-class SinglyLinkedList{
-    constructor(){
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
-    }
+// class SinglyLinkedList{
+//     constructor(){
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
 
-    push(val){
-        let newNode = new Node(val)
+//     push(val){
+//         let newNode = new Node(val)
 
-        if(!(this.head)){
-            this.head = newNode
+//         if(!(this.head)){
+//             this.head = newNode
 
-            this.tail = this.head
-        } else {
-            this.tail.next = newNode
-            this.tail = newNode
+//             this.tail = this.head
+//         } else {
+//             this.tail.next = newNode
+//             this.tail = newNode
            
             
-        }
-        this.length += 1
-        return this;
-    }
+//         }
+//         this.length += 1
+//         return this;
+//     }
 
-    pop(){
-        if(!this.head) return undefined;
-        let currentNode = this.head
-        let previousNode = null;
-        while(currentNode.next){
-            previousNode = currentNode
-            currentNode = currentNode.next
+//     pop(){
+//         if(!this.head) return undefined;
+//         let currentNode = this.head
+//         let previousNode = null;
+//         while(currentNode.next){
+//             previousNode = currentNode
+//             currentNode = currentNode.next
            
-        }
-        previousNode.next = null
-        this.tail = previousNode;
-        this.length--
-        return this;
-    }
+//         }
+//         previousNode.next = null
+//         this.tail = previousNode;
+//         this.length--
+//         return this;
+//     }
 
-    shift(){
-        if(!this.head) return undefined;
-        let temp = this.head;
-        this.head = this.head.next;
-        this.length--
-        return temp
-    }
+//     shift(){
+//         if(!this.head) return undefined;
+//         let temp = this.head;
+//         this.head = this.head.next;
+//         this.length--
+//         return temp
+//     }
 
-    unshift(val){
-        let newNode = new Node(val)
-        if(!this.head){
-            this.head = newNode
-            this.tail = this.head
-        } else {
-            newNode.next = this.head;
-            this.head = newNode;
-        }
-        this.length++;
-        return this;
-    }
+//     unshift(val){
+//         let newNode = new Node(val)
+//         if(!this.head){
+//             this.head = newNode
+//             this.tail = this.head
+//         } else {
+//             newNode.next = this.head;
+//             this.head = newNode;
+//         }
+//         this.length++;
+//         return this;
+//     }
 
-    get(index){
-        if(index < 0 || index >= this.length) return null;
-    //     let str = '.next'
-    //     let longString = str.repeat(index)
-    //    return this.head + longString
-    let counter = 0;
-    let currentNode = this.head
-        let previousNode = null;
+//     get(index){
+//         if(index < 0 || index >= this.length) return null;
+//     //     let str = '.next'
+//     //     let longString = str.repeat(index)
+//     //    return this.head + longString
+//     let counter = 0;
+//     let currentNode = this.head
+//         let previousNode = null;
 
-    while(counter <= index){
-       if(counter === index){
-           return currentNode
-       }
-        previousNode = currentNode
-        currentNode = currentNode.next
-        counter++;
-    }
+//     while(counter <= index){
+//        if(counter === index){
+//            return currentNode
+//        }
+//         previousNode = currentNode
+//         currentNode = currentNode.next
+//         counter++;
+//     }
        
-    }
+//     }
 
-    set(val, idx){
-        let node = this.get(idx)
-        if(!node) { return false; }
-        else {
-           node.val = val;
-            return true;
-        }
-    }
+//     set(val, idx){
+//         let node = this.get(idx)
+//         if(!node) { return false; }
+//         else {
+//            node.val = val;
+//             return true;
+//         }
+//     }
 
-    insert(val, idx){
-        let newNode = new Node(val)
-        if(idx < 0 || idx > this.length) return false;
-        if(idx === this.length){
-            this.push(val)
-            return true;
+//     insert(val, idx){
+//         let newNode = new Node(val)
+//         if(idx < 0 || idx > this.length) return false;
+//         if(idx === this.length){
+//             this.push(val)
+//             return true;
             
-        }
-        if(idx === 0){
-            this.unshift(val)
-            return true
-        } else {
-            let node = this.get(idx - 1)
-            newNode.next = node.next;
-            node.next = newNode;
-            this.length++
-            return true;
-        }
-    }
+//         }
+//         if(idx === 0){
+//             this.unshift(val)
+//             return true
+//         } else {
+//             let node = this.get(idx - 1)
+//             newNode.next = node.next;
+//             node.next = newNode;
+//             this.length++
+//             return true;
+//         }
+//     }
 
-    remove(idx){
-        if(idx < 0 || idx > this.length) return undefined;
-        if(idx === this.length - 1) return this.pop();
-        if(idx === 0) return this.shift();
-        let node = this.get(idx - 1);
-        let temp = node.next
-        node.next = temp.next
-        this.length--
-        return temp
-    }
+//     remove(idx){
+//         if(idx < 0 || idx > this.length) return undefined;
+//         if(idx === this.length - 1) return this.pop();
+//         if(idx === 0) return this.shift();
+//         let node = this.get(idx - 1);
+//         let temp = node.next
+//         node.next = temp.next
+//         this.length--
+//         return temp
+//     }
 
-    reverse(){
-        let node = this.head;
-        this.head = this.tail;
-        this.tail = node;
+//     reverse(){
+//         let node = this.head;
+//         this.head = this.tail;
+//         this.tail = node;
 
-        let nextVar;
-        let prevVar = null; 
+//         let nextVar;
+//         let prevVar = null; 
      
      
 
-        for(let i = 0; i < this.length; i++){
+//         for(let i = 0; i < this.length; i++){
            
     
-            nextVar = node.next;
-            node.next = prevVar;
-            prevVar = node;
-            node = nextVar;
+//             nextVar = node.next;
+//             node.next = prevVar;
+//             prevVar = node;
+//             node = nextVar;
             
            
-        }
-        return this
+//         }
+//         return this
 
-    }
-}
-
-
-let list = new SinglyLinkedList()
-list.push(2)
-list.push(4)
-list.push(6)
-list.push(8)
-list.push(10)
-console.log(list.reverse())
+//     }
+// }
 
 
-console.log(list)
+// let list = new SinglyLinkedList()
+// list.push(2)
+// list.push(4)
+// list.push(6)
+// list.push(8)
+// list.push(10)
+// console.log(list.reverse())
 
 
+// console.log(list)
+
+
+
+// class Node{
+//     constructor(val){
+//         this.val = val;
+//         this.next = null;
+//         this.prev = null;
+//     }
+// }
+
+// class DoublyLinkedList{
+//     constructor(){
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
+
+//     push(val){
+//         let newNode = new Node(val);
+//         if(this.head === null){
+//             this.head = newNode;
+//             this.tail = newNode;
+//         } else {
+//             this.tail.next = newNode;
+//             newNode.prev = this.tail;
+//             this.tail = newNode;
+            
+//         }
+//         this.length++
+//         return this
+//     }
+
+//     pop(){
+//         if(!this.head) return undefined;
+//         let returnValue = this.tail;
+//         if(this.length === 1){
+//             this.head = null;
+//             this.tail = null;
+//         } else {
+//             this.tail = this.tail.prev;
+//             this.tail.next = null;
+//             returnValue.prev = null;
+//         }
+//         this.length --
+//         return returnValue;
+//     }
+
+//     shift(){
+//         if(this.length === 0 ) return undefined;
+//         let returnValue = this.head;
+//         if(this.length === 1){
+//             this.head = null;
+//             this.tail = null; 
+//         } else {
+//             this.head = returnValue.next;
+//             this.head.prev = null;
+//             returnValue.next = null;
+//         }
+//         this.length--;
+//         return returnValue;
+//     }
+
+//     unshift(val){
+//         let newNode = new Node(val);
+//         if(this.length === 0){
+//             this.head = newNode;
+//             this.tail = newNode;
+//         }
+//         this.head.prev = newNode;
+//         newNode.next = this.head
+//         this.head = newNode;
+//         this.length++ 
+//         return list;
+//     }
+// }
+
+
+
+// let list = new DoublyLinkedList()
+// list.push(2)
+// list.push(4)
+// list.push(6)
+// list.push(8)
+// list.push(10)
+// console.log(list.unshift(0))
+
+// console.log(list)
 
 
