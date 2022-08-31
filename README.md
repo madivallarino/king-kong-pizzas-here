@@ -1,1 +1,3 @@
-# music-bop
+Instagram Clone 
+
+-built in React 
