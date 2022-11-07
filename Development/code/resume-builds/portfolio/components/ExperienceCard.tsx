@@ -8,7 +8,7 @@ type Props = {
 }
 
 function ExperienceCard({ experience }: Props) {
-  console.log(experience)
+  
 
 
   return (
@@ -29,14 +29,15 @@ function ExperienceCard({ experience }: Props) {
             <h4 className="text-4xl font-light">{experience.jobTitle}</h4>
             <p className="font-bold text-2xl mt-1">{experience.name}</p>
             <div className="flex space-x-2 my-2">
-               {/* {experience.technologies.map((technology)=> (
-                
-                  <img 
-                    key={technology._id}
-                    className="h-10 w-10 rounded-full"
-                   src={urlFor(technology.image).url()}
-                  /> 
-                  ))} */}
+              {experience?.technologies.map(tech => (
+                <img 
+                key={tech._id}
+                className="h-10 w-10 rounded-full"
+                alt=""
+                src={urlFor(tech.image).url()}
+               /> 
+              ))}
+            
             </div>
             <p className="uppercase py-5 text-gray-300">
               {experience.dateStarted} - {experience.dateEnded}
