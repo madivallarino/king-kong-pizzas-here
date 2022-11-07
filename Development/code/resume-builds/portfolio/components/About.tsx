@@ -1,8 +1,13 @@
 import React from 'react'
 import { motion } from "framer-motion"
-type Props = {}
+import { urlFor } from '../sanity'
+import { PageInfo } from "../typings"
 
-function About({}: Props) {
+type Props = {
+  pageInfo: PageInfo
+}
+
+function About({ pageInfo }: Props) {
   return (
     <motion.div 
     initial={{ opacity: 0}}
@@ -23,13 +28,13 @@ function About({}: Props) {
             duration: 1.2,
           }}
           viewport={{once: true}}
-          src="https://i.pinimg.com/280x280_RS/01/43/2c/01432c796d859e4fff32cce75c43aa55.jpg"
+          src={urlFor(pageInfo?.profilePic).url()}
           className="-mb-20 md:mb-0 flex-shrink-0 w-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[400px] xl:h-[500px]"
         />
         <div className="space-y-10 px-0 md:px-10">
             <h4 className="text-4xl font-semibold">Here is a <span className="underline decoration-[#F7AB0A]/50"> little</span> background </h4>
             <p className="text-base">
-                Hi, I'm Maddy. I'm a Front-End Engineer. I'm a game engineer. While pursuing my bachelors degree in liberal arts, I realized I was missing the technical skills of my life entrepreneurship in discovering robotics. I fastpaced my learning and completed Flatiron School's Software Engineering bootcamp and have continued to fill out my knowledge and complete other courses gearing me in the right direction.
+               {pageInfo?.backgroundInformation}
             </p>
         </div>
     </motion.div>
