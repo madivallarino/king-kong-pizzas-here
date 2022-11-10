@@ -1,10 +1,10 @@
 import React from 'react'
-import EachSkill from './EachSkill'
+import EachSkill from './Skill'
 import { motion } from "framer-motion"
-import { Skill } from '../typings'
+import { Skill as SkillType} from '../typings'
 
 type Props = {
-  skills: Skill[]
+  skills: SkillType[]
 }
 
 function Skills({skills}: Props) {
@@ -22,10 +22,10 @@ function Skills({skills}: Props) {
             Hover over a skill for current profiency
         </h3>
         <div className=" grid grid-cols-4 gap-5 align-middle">
-           {skills.map((kill)=> (
+           {skills.map((skill)=> (
             <EachSkill 
-              sill={kill} 
-              key={kill._id}
+              skill={skill} 
+              key={skill._id}
               />
            ))}
         </div>

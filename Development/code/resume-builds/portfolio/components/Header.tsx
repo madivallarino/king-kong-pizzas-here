@@ -29,7 +29,7 @@ function Header({ socials }: Props) {
           {socials.map((social)=> {
             return (
             <SocialIcon 
-              key={social.id}
+              key={social._id}
               url={social.url}
               fgColor="gray"
               bgColor="transparent"

@@ -3,8 +3,10 @@ import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
-  example: string,
-  exampleRequired: string,
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 };
 
 type Props = {}
@@ -15,7 +17,6 @@ function ContactMe({}: Props) {
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `mailto:madivallarino@gmail.com?subject=${formData.subject}&body= Hi, my name is ${formData.name}. ${formData.message}`
   }
-
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
         <h3 className="absolute top-16 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -64,7 +65,7 @@ function ContactMe({}: Props) {
                 <textarea placeholder="Message"
                 className="contactInput"
                 {...register('message')}/>
-                <button className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg">Submit</button>
+                <button type="submit" className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg">Submit</button>
             </form>
         </div>
     </div>
