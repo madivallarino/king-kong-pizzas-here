@@ -20,7 +20,7 @@ export default function Home({ products }) {
       </div>
      
       <div>
-        <ProductFeed products={products} />
+      <ProductFeed products={products} />
       </div>
      
 

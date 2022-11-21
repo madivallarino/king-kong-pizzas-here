@@ -14,19 +14,19 @@ function Banner() {
           showThumbs={false}
           interval={5000}
         >
-            <div>
+          
                 <Image
                 loading='lazy' 
                 src='https://links.papareact.com/gi1' 
                 alt='' 
+                width={600} 
+                height={600}
                 />
-            </div>
-            <div>
-            <Image loading='lazy' src='https://links.papareact.com/6ff' alt='' />
-            </div>
-            <div>
-            <Image loading='lazy' src='https://links.papareact.com/7ma' alt='' />
-            </div>
+           
+            <Image loading='lazy' width={600} height={600} src='https://links.papareact.com/6ff' alt='' />
+            
+            <Image loading='lazy' width={600} height={600} src='https://links.papareact.com/7ma' alt='' />
+            
         </Carousel>
 
     </div>
