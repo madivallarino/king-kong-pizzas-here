@@ -18,7 +18,7 @@ function ProductFeed({ products }) {
         />
        ))}
       
-       <Image src="https://links.papareact.com/dyz" width={600} height={600} className='image' alt=""/>
+       <Image src="https://links.papareact.com/dyz" width={1500} height={600} className='image' alt=""/>
     
       <div className='md:col-span-2'>
         {products?.slice(4,5).map(({id, title, price, description, category, image})=> (
