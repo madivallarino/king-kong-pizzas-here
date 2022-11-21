@@ -11,12 +11,18 @@ export default function Home({ products }) {
         
       </Head>
 
- 
-      <Header />
-   
-      <Banner />
+      <div>
+        <Header />
+      </div>
 
-      <ProductFeed products={products} />
+      <div>
+        <Banner />
+      </div>
+     
+      <div>
+        <ProductFeed products={products} />
+      </div>
+     
 
     </div>
   )
